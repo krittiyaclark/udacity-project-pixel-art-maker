@@ -1,7 +1,3 @@
-// TODO: Define your variables
-// TODO: Add event listeners
-// TODO: Set the size of the cross stitch canvas
-
 $(document).ready(function() {
 
   $('#submit').click(function(e) {
@@ -17,7 +13,7 @@ $(document).ready(function() {
     let inputHeight = $('#inputHeight').val();
     let inputWidth = $('#inputWidth').val();
 
-    // Create grid 
+    // Create grid
     for (let row = 1; row <= inputHeight; row++) {
       let makeRow = $('<tr></tr>');
       for (let col = 1; col <= inputWidth; col++) {
@@ -25,6 +21,12 @@ $(document).ready(function() {
       }
       grid.append(makeRow);
     }
+
+      // Fill color
+      $('#pixelCanvas').on('click', 'td', function() {
+        $(this).css('background-color', colorPicker.val());
+      });
   }
+
 
 });
